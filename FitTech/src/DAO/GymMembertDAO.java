@@ -15,7 +15,7 @@ public class GymMembertDAO {
 
     }
 
-    public ResultSet AuthGymStudent(GymMember gs) {
+    public boolean AuthGymStudent(GymMember gs) {
 
         try {
             ResultSet rs;
@@ -28,17 +28,11 @@ public class GymMembertDAO {
 
             ps = connect.getConnection().prepareStatement(query);
 
-            //ps.setString(1, gs.getPassword());
-            //ps.setString(2, gs.getEmail());
-            rs = ps.executeQuery(query);
-
-            return rs;
+            return ps.executeQuery(query) != null;
 
         } catch (SQLException e) {
             System.out.println("SQLException message: " + e.getMessage());
         }
-
-        return null;
-
+        return false;
     }
 }
