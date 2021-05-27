@@ -4,22 +4,27 @@
  * and open the template in the editor.
  */
 package fittech;
+import Controller.MainController;
 
+<<<<<<< HEAD
 import Controller.Menu_Controller;
 
 /**
  *
  * @author Vinicius Taborda
  */
+=======
+>>>>>>> master
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+<<<<<<< HEAD
         // TODO code application logic here
         
         Menu_Controller menu = new Menu_Controller();
+=======
+        MainController mc = new MainController();
+>>>>>>> master
     }
-    
+
 }
