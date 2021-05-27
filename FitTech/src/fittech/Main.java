@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         
         Menu_Controller menu = new Menu_Controller();
-        MainController mc = new MainController();
+        //MainController mc = new MainController();
     }
 
 }

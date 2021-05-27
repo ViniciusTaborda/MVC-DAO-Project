@@ -1,19 +1,20 @@
 package DAO;
 
 import Model.Treino;
+import dao.Connect;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /** *  * @author agath */
 public class TreinoDao {
     
-    private final Conexao conn;
+    private final Connect connect;
     private String query;
     private PreparedStatement ps;
     //private ResultSet rs;
 
     public TreinoDao(){
-        this.conn = new Conexao();
+        this.connect = new Connect();
 
     }
 
@@ -21,8 +22,8 @@ public class TreinoDao {
 
     try{
 
-        query =  "INSERT INTO fittech (codTreino, idExercicio, serie, repeticao, idAluno) VALUES (?,?,?,?,?)";
-        ps = conn.getConexao().prepareStatement(query);
+        query =  "INSERT INTO treino (codTreino, idExercicio, serie, repeticao, idAluno) VALUES (?,?,?,?,?)";
+        ps = connect.getConnection().prepareStatement(query);
 
 
         ps.setString(1,t.getcodTreino());

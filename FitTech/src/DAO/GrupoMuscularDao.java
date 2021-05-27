@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.GrupoMuscular;
+import dao.Connect;
 import java.sql.PreparedStatement;
 //import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,21 +10,21 @@ import java.sql.SQLException;
 
 public class GrupoMuscularDao {
     
-    private final Conexao conn;
+    private final Connect connect;
     private String query;
     private PreparedStatement ps;
     //private ResultSet rs;
 
     public GrupoMuscularDao(){
-        this.conn = new Conexao();
+        this.connect = new Connect();
     }
 
         public void cadastrarGrupoMuscular(GrupoMuscular gm){
         
         try{
             
-            query =  "INSERT INTO fittech (grupoMuscular) VALUES (?)";
-             ps = conn.getConexao().prepareStatement(query);
+            query =  "INSERT INTO grupomuscular (NomeGrupoMuscular) VALUES (?)";
+             ps = connect.getConnection().prepareStatement(query);
             
             ps.setString(1,gm.getGrupoMuscular());
             
