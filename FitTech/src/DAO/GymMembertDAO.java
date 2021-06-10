@@ -1,4 +1,4 @@
-package dao;
+package DAO;
 
 import Model.GymMember;
 import java.sql.PreparedStatement;
@@ -35,4 +35,28 @@ public class GymMembertDAO {
         }
         return false;
     }
+    
+    public void insere(GymMember gm) {
+        try{
+            query = "INSERT INTO gymmember (email, password, cpf, nome, address, telefone, nascimento, condicoesMedicas) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        
+            ps = connect.getConexao().prepareStatement(query); //essa query é a conexao que vai juntar um só objeto para depois executa-la.
+        
+            ps.setString(1, gm.getEmail());
+            ps.setString(2, gm.getPassword());
+            ps.setString(3, gm.getCpf());
+            ps.setString(4, gm.getNome());
+            ps.setInt(5, gm.getAddress());
+            ps.setString(6, gm.getTelefone());
+            ps.setString(7, gm.getNascimento());
+            ps.setString(8, gm.getCondicoesMedicas());
+        
+            ps.executeUpdate();         
+            ps.close();
+        }
+        catch(SQLException ex) {}
+        
+    }
+
 }
+
