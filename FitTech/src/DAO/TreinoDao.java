@@ -1,7 +1,7 @@
 package DAO;
 
 import Model.Treino;
-import dao.Connect;
+import DAO.Connect;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
@@ -53,8 +53,6 @@ public class TreinoDao {
             ps = connect.getConnection().prepareStatement(query);
 
             result = ps.executeQuery(query);
-
-            ps.close();
 
         } catch (SQLException ex) {
         }

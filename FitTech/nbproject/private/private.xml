@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/DAO/TreinoDao.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/fittech/Main.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/View/SelecionarTreinoView.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/View/Menu_view.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/Controller/SelecionarTreinoController.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/Controller/CadastrarTreinoController.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/Controller/Menu_Controller.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/Model/Treino.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/DAO/GymMembertDAO.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/View/LoginView.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/Model/GymMember.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/DAO/GrupoMuscularDao.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/DAO/ExercicioDao.java</file>
+            <file>file:/D:/PUC/Terceiro%20Periodo/Aplicação%20multicamadas/MVC%20DAO%20Project/MVC-DAO-Project/FitTech/src/Controller/LoginController.java</file>
+        </group>
+    </open-files>
 </project-private>

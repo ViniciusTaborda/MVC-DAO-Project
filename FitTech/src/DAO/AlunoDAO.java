@@ -1,26 +1,26 @@
 package DAO;
 
-import Model.GymMember;
+import Model.Aluno;
 import java.sql.PreparedStatement;
 import java.sql.*;
 
-public class GymMembertDAO {
+public class AlunoDAO {
 
     private final Connect connect;
     private String query;
     private PreparedStatement ps;
 
-    public GymMembertDAO() {
+    public AlunoDAO() {
         this.connect = new Connect();
 
     }
 
-    public boolean AuthGymStudent(GymMember gs) {
+    public boolean AutenticaAluno(Aluno gs) {
 
         try {
             ResultSet rs;
 
-            query = "SELECT * FROM gymmember WHERE email = '"
+            query = "SELECT * FROM aluno WHERE email = '"
                     + gs.getEmail()
                     + "' AND password = '"
                     + gs.getPassword()
@@ -35,28 +35,29 @@ public class GymMembertDAO {
         }
         return false;
     }
-    
-    public void insere(GymMember gm) {
-        try{
-            query = "INSERT INTO gymmember (email, password, cpf, nome, address, telefone, nascimento, condicoesMedicas) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        
-            ps = connect.getConexao().prepareStatement(query); //essa query é a conexao que vai juntar um só objeto para depois executa-la.
-        
+
+    public void insereAluno(Aluno gm) {
+        try {
+            query = "INSERT INTO aluno (email, password, cpf, nome, telefone, nascimento, condicoesMedicas) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+            ps = connect.getConnection().prepareStatement(query);
+
             ps.setString(1, gm.getEmail());
             ps.setString(2, gm.getPassword());
             ps.setString(3, gm.getCpf());
             ps.setString(4, gm.getNome());
-            ps.setInt(5, gm.getAddress());
-            ps.setString(6, gm.getTelefone());
-            ps.setString(7, gm.getNascimento());
-            ps.setString(8, gm.getCondicoesMedicas());
-        
-            ps.executeUpdate();         
+            ps.setString(5, gm.getTelefone());
+            ps.setString(6, gm.getNascimento());
+            ps.setString(7, gm.getCondicoesMedicas());
+
+            ps.executeUpdate();
+
             ps.close();
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
-        catch(SQLException ex) {}
-        
+
     }
 
 }
-

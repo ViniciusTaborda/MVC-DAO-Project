@@ -1,26 +1,26 @@
 
 package DAO;
 
-import Model.Address;
+import Model.Endereco;
 import java.sql.PreparedStatement;
 import java.sql.*;
 
-public class AddressDAO {
+public class EnderecoDAO {
     private final Connect connect;
     private String query;
     private PreparedStatement ps;
 
-    public AddressDAO() {
+    public EnderecoDAO() {
         this.connect = new Connect();
 
     }
 
-    public void insere(Address ad) {
+    public void insere(Endereco ad) {
 
         try{
             query = "INSERT INTO address (logradouro, numero, bairro, cidade, uf, complemento) VALUES (?, ?, ?, ?, ?, ?)";
         
-            ps = connect.getConexao().prepareStatement(query); //essa query é a conexao que vai juntar um só objeto para depois executa-la.
+            ps = connect.getConnection().prepareStatement(query); //essa query é a conexao que vai juntar um só objeto para depois executa-la.
         
             ps.setString(1, ad.getLogradouro());
             ps.setInt(2, ad.getNumero());

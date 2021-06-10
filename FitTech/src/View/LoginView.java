@@ -1,24 +1,24 @@
 package View;
 
-import Model.GymMember;
+import Model.Aluno;
 import java.util.Scanner;
 
 public class LoginView {
 
-    private GymMember gs;
+    private Aluno a;
 
-    public GymMember LoginScreen() {
+    public Aluno LoginScreen() {
 
-        gs = new GymMember();
+        a = new Aluno();
         Scanner s = new Scanner(System.in);
 
-        System.out.print("Enter your email: ");
-        gs.setEmail(s.next());
+        System.out.print("Digite seu email: ");
+        a.setEmail(s.next());
 
-        System.out.print("Enter your password: ");
-        gs.setPassword(s.next());
+        System.out.print("Digite sua senha: ");
+        a.setPassword(s.next());
 
-        return gs;
+        return a;
     }
 
     public void isAuthenticated(boolean is_auth) {

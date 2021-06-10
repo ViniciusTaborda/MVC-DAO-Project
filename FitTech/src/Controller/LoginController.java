@@ -1,23 +1,23 @@
 package Controller;
 
 import View.LoginView;
-import Model.GymMember;
-import DAO.GymMembertDAO;
+import Model.Aluno;
+import DAO.AlunoDAO;
 
 public class LoginController {
 
     private final LoginView lv;
-    private GymMember gs;
-    private final GymMembertDAO gsDAO;
+    private Aluno gs;
+    private final AlunoDAO gsDAO;
     public boolean is_auth;
 
     public LoginController() {
 
-        gs = new GymMember();
+        gs = new Aluno();
         lv = new LoginView();
         gs = lv.LoginScreen();
-        gsDAO = new GymMembertDAO();
-        is_auth = gsDAO.AuthGymStudent(gs);
+        gsDAO = new AlunoDAO();
+        is_auth = gsDAO.AutenticaAluno(gs);
 
         lv.isAuthenticated(is_auth);
 

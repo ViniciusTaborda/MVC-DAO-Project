@@ -1,24 +1,17 @@
-
 package Model;
 
 import java.util.ArrayList;
 
-public class Address {
-    
-    //ATRIBUTOS
-    
+public class Endereco {
+
     private String logradouro;
     private int numero;
     private String bairro;
     private String cidade;
     private String uf;
     private String complemento;
-    
-    
-    
-    //CONSTRUTOR
-    
-    public Address(String logradouro, int numero, String bairro, String cidade, String uf, String complemento) {
+
+    public Endereco(String logradouro, int numero, String bairro, String cidade, String uf, String complemento) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.bairro = bairro;
@@ -27,11 +20,9 @@ public class Address {
         this.complemento = complemento;
     }
 
-    public Address() {
-        
-    }
+    public Endereco() {
 
-    //GETTERS AND SETTERS
+    }
 
     public String getLogradouro() {
         return logradouro;
@@ -80,6 +71,5 @@ public class Address {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
-    
-    
+
 }

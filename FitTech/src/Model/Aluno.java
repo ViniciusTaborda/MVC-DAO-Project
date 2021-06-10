@@ -1,36 +1,29 @@
 package Model;
 
-public class GymMember {
-    
-    //atributes
+public class Aluno {
+
     public String email;
     public String password;
     private String cpf;
     private String nome;
-    private int address;
     private String telefone;
     private String nascimento;
     private String condicoesMedicas;
-    
-    //constructor
 
-    public GymMember(String email, String password, String cpf, String nome, int address, String telefone, String nascimento, String condicoesMedicas) {
+    public Aluno(String email, String password, String cpf, String nome, String telefone, String nascimento, String condicoesMedicas) {
         this.email = email;
         this.password = password;
         this.cpf = cpf;
         this.nome = nome;
-        this.address = address;
         this.telefone = telefone;
         this.nascimento = nascimento;
         this.condicoesMedicas = condicoesMedicas;
     }
 
-    public GymMember() {
-        
+    public Aluno() {
+
     }
-    
-    
-    //getters and setters
+
     public String getEmail() {
         return email;
     }
@@ -61,14 +54,6 @@ public class GymMember {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int getAddress() {
-        return address;
-    }
-
-    public void setAddress(int address) {
-        this.address = address;
     }
 
     public String getTelefone() {

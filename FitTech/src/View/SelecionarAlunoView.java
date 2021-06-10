@@ -9,9 +9,9 @@ import Model.*;
 import DAO.TreinoDao;
 import java.sql.*;
 
-public class SelecionarTreinoView {
+public class SelecionarAlunoView {
 
-    public SelecionarTreinoView(ResultSet result) {
+    public SelecionarAlunoView(ResultSet result) {
         System.out.println("Treinos selecionados: \n");
 
         try {

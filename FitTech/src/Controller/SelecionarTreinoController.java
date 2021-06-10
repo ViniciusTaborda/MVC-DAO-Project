@@ -3,27 +3,19 @@ package Controller;
 import View.*;
 import Model.*;
 import DAO.TreinoDao;
-
-/**
- *
- * @author Vinicius Taborda
- */
+import java.sql.*;
 
 public class SelecionarTreinoController {
 
     private final SelecionarTreinoView sev;
-    private Treino t;
     private final TreinoDao tDao;
-    public boolean is_auth;
+    public ResultSet result;
 
     public SelecionarTreinoController() {
 
         tDao = new TreinoDao();
         result = tDao.selecionarTreino();
-        sev = new SelecionarTreinoView();
-
-        lv.isAuthenticated(is_auth);
+        sev = new SelecionarTreinoView(result);
 
     }
-
 }

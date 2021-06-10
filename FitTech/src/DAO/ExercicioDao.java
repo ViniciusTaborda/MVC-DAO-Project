@@ -2,7 +2,7 @@ package DAO;
 
 import Model.Exercicio;
 import Model.Treino;
-import dao.Connect;
+import DAO.Connect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,7 +40,7 @@ public class ExercicioDao {
 
     }
 
-    public ResultSet selecionarExercicio(Treino t) {
+    public ResultSet selecionarExercicio() {
 
         ResultSet result = null;
 
@@ -51,9 +51,8 @@ public class ExercicioDao {
 
             result = ps.executeQuery(query);
 
-            ps.close();
-
         } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
 
         return result;

@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * * * @author agath
  */
-public class Menu_view {
+public class MenuView {
 
     public int Menu() {
 
