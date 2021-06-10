@@ -2,7 +2,7 @@ package Controller;
 
 import View.LoginView;
 import Model.GymMember;
-import dao.GymMembertDAO;
+import DAO.GymMembertDAO;
 
 public class LoginController {
 
