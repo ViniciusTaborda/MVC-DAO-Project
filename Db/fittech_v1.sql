@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Banco de dados: `fittech`
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `aluno` (
   `idAluno` int NOT NULL,
   `nomeAluno` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `aluno`
@@ -49,7 +49,7 @@ CREATE TABLE `exercicio` (
   `idExercicio` int NOT NULL,
   `nomeExercicio` varchar(80) NOT NULL,
   `idGrupoMuscular` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `exercicio`
@@ -67,7 +67,7 @@ INSERT INTO `exercicio` (`idExercicio`, `nomeExercicio`, `idGrupoMuscular`) VALU
 CREATE TABLE `grupomuscular` (
   `idGrupomuscular` int NOT NULL,
   `NomeGrupoMuscular` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `grupomuscular`
@@ -89,7 +89,7 @@ CREATE TABLE `gymmember` (
   `GymMember_Id` int NOT NULL,
   `email` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `gymmember`
@@ -110,7 +110,7 @@ CREATE TABLE `treino` (
   `serie` int NOT NULL,
   `repeticao` int NOT NULL,
   `idAluno` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `treino`

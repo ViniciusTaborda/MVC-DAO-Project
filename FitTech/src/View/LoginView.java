@@ -21,4 +21,15 @@ public class LoginView {
         return gs;
     }
 
+    public void isAuthenticated(boolean is_auth) {
+
+        if (is_auth) {
+            System.out.println("Authenticated");
+
+        } else {
+            System.out.println("Not auth");
+        }
+
+    }
+
 }
