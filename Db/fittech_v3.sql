@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Jun-2021 às 02:46
+-- Tempo de geração: 16-Jun-2021 às 00:37
 -- Versão do servidor: 8.0.23
 -- versão do PHP: 8.0.3
 
@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Banco de dados: `fittech`
@@ -29,15 +29,45 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `aluno` (
   `idAluno` int NOT NULL,
-  `nomeAluno` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `cpf` varchar(100) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `telefone` varchar(100) NOT NULL,
+  `nascimento` varchar(100) NOT NULL,
+  `condicoesMedicas` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `aluno`
 --
 
-INSERT INTO `aluno` (`idAluno`, `nomeAluno`) VALUES
-(1, 'Agatha');
+INSERT INTO `aluno` (`idAluno`, `email`, `password`, `cpf`, `nome`, `telefone`, `nascimento`, `condicoesMedicas`) VALUES
+(1, '', '', '', '', '', '', ''),
+(4, 'agatha@agatha', '12', '99999999999', 'Agatha', '41999999999', '04/08/1990', 'sem');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `endereco`
+--
+
+CREATE TABLE `endereco` (
+  `idEndereco` int NOT NULL,
+  `logradouro` varchar(200) NOT NULL,
+  `numero` int NOT NULL,
+  `bairro` varchar(150) NOT NULL,
+  `cidade` varchar(150) NOT NULL,
+  `uf` varchar(2) NOT NULL,
+  `complemento` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `endereco`
+--
+
+INSERT INTO `endereco` (`idEndereco`, `logradouro`, `numero`, `bairro`, `cidade`, `uf`, `complemento`) VALUES
+(1, 'casemiro', 941, 'contenda', 'sjp', 'pr', 'casa');
 
 -- --------------------------------------------------------
 
@@ -49,14 +79,15 @@ CREATE TABLE `exercicio` (
   `idExercicio` int NOT NULL,
   `nomeExercicio` varchar(80) NOT NULL,
   `idGrupoMuscular` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `exercicio`
 --
 
 INSERT INTO `exercicio` (`idExercicio`, `nomeExercicio`, `idGrupoMuscular`) VALUES
-(1, 'Abdominal em p�', 1);
+(1, 'Abdominal em pe', 1),
+(2, 'Agachamento', 65);
 
 -- --------------------------------------------------------
 
@@ -67,7 +98,7 @@ INSERT INTO `exercicio` (`idExercicio`, `nomeExercicio`, `idGrupoMuscular`) VALU
 CREATE TABLE `grupomuscular` (
   `idGrupomuscular` int NOT NULL,
   `NomeGrupoMuscular` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `grupomuscular`
@@ -75,28 +106,7 @@ CREATE TABLE `grupomuscular` (
 
 INSERT INTO `grupomuscular` (`idGrupomuscular`, `NomeGrupoMuscular`) VALUES
 (1, 'Abdome'),
-(2, '1'),
-(3, 'pap'),
-(63, 'oi');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `gymmember`
---
-
-CREATE TABLE `gymmember` (
-  `GymMember_Id` int NOT NULL,
-  `email` varchar(64) NOT NULL,
-  `password` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Extraindo dados da tabela `gymmember`
---
-
-INSERT INTO `gymmember` (`GymMember_Id`, `email`, `password`) VALUES
-(1, 'vinicius@pucpr.edu.br', 'password');
+(65, 'Perna');
 
 -- --------------------------------------------------------
 
@@ -110,7 +120,7 @@ CREATE TABLE `treino` (
   `serie` int NOT NULL,
   `repeticao` int NOT NULL,
   `idAluno` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `treino`
@@ -118,7 +128,8 @@ CREATE TABLE `treino` (
 
 INSERT INTO `treino` (`codTreino`, `idExercicio`, `serie`, `repeticao`, `idAluno`) VALUES
 ('TreinoA', 1, 3, 20, 1),
-('TreinoA', 1, 2, 30, 1);
+('TreinoA', 1, 2, 30, 1),
+('TreinoA', 2, 3, 30, 4);
 
 --
 -- Índices para tabelas despejadas
@@ -129,6 +140,12 @@ INSERT INTO `treino` (`codTreino`, `idExercicio`, `serie`, `repeticao`, `idAluno
 --
 ALTER TABLE `aluno`
   ADD PRIMARY KEY (`idAluno`);
+
+--
+-- Índices para tabela `endereco`
+--
+ALTER TABLE `endereco`
+  ADD PRIMARY KEY (`idEndereco`);
 
 --
 -- Índices para tabela `exercicio`
@@ -142,12 +159,6 @@ ALTER TABLE `exercicio`
 --
 ALTER TABLE `grupomuscular`
   ADD PRIMARY KEY (`idGrupomuscular`);
-
---
--- Índices para tabela `gymmember`
---
-ALTER TABLE `gymmember`
-  ADD PRIMARY KEY (`GymMember_Id`);
 
 --
 -- Índices para tabela `treino`
@@ -164,25 +175,25 @@ ALTER TABLE `treino`
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `idAluno` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAluno` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `endereco`
+--
+ALTER TABLE `endereco`
+  MODIFY `idEndereco` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `exercicio`
 --
 ALTER TABLE `exercicio`
-  MODIFY `idExercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idExercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `grupomuscular`
 --
 ALTER TABLE `grupomuscular`
-  MODIFY `idGrupomuscular` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
-
---
--- AUTO_INCREMENT de tabela `gymmember`
---
-ALTER TABLE `gymmember`
-  MODIFY `GymMember_Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idGrupomuscular` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- Restrições para despejos de tabelas
