@@ -15,9 +15,9 @@ public class CadastrarEnderecoController {
         
         cadv = new CadastrarEnderecoView();
         
-        ad = cadv.telaDeCadastro(ad); //agora tenho uma locadora
+        ad = cadv.telaDeCadastro(ad); 
         
-        adDAO = new EnderecoDAO(); //aqui eu ja estou abrindo conexão com o banco
+        adDAO = new EnderecoDAO(); 
         adDAO.insere(ad);
     }
 }

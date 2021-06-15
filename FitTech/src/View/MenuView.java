@@ -18,7 +18,8 @@ public class MenuView {
         System.out.println("(4) Cadastrar Treino");
         System.out.println("(5) Selecionar Treino");
         System.out.println("(6) Selecionar Exercicio");
-        System.out.println("(7) Login\n");
+        System.out.println("(7) Cadastrar Endereço");
+        System.out.println("(8) Login\n");
 
         System.out.println("(9) Sair\n");
 

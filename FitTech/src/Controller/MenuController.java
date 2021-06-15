@@ -36,9 +36,12 @@ public class MenuController {
                 break;
 
             case 7:
+                CadastrarEnderecoController cendc = new CadastrarEnderecoController();
+                break;
+            case 8:
                 LoginController lg = new LoginController();
                 break;
-
+                
             case 9:
                 System.exit(0);
                 break;

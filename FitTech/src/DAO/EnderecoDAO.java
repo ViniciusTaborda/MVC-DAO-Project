@@ -18,7 +18,7 @@ public class EnderecoDAO {
     public void insere(Endereco ad) {
 
         try{
-            query = "INSERT INTO address (logradouro, numero, bairro, cidade, uf, complemento) VALUES (?, ?, ?, ?, ?, ?)";
+            query = "INSERT INTO endereco (logradouro, numero, bairro, cidade, uf, complemento) VALUES (?, ?, ?, ?, ?, ?)";
         
             ps = connect.getConnection().prepareStatement(query); //essa query é a conexao que vai juntar um só objeto para depois executa-la.
         

@@ -1,7 +1,6 @@
 package Controller;
 
 import View.*;
-import Model.*;
 import DAO.ExercicioDao;
 import java.sql.*;
 
